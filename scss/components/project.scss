@@ -1,0 +1,50 @@
+@use "../abstracts/" as *;
+
+.project {
+  cursor: pointer;
+  span {
+    display: block;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > *:not(:last-child) {
+      margin-bottom: rem(12);
+    }
+    .line {
+      width: rem(17);
+      height: rem(3);
+      background-color: $color-yellow;
+    }
+  }
+  &__img {
+    margin-bottom: rem(40);
+    overflow: hidden;
+
+    @include breakpoint-down(small) {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__name {
+    text-transform: uppercase;
+    font-family: pb;
+  }
+  &--none-medium {
+    @include breakpoint-down(medium) {
+      display: none;
+    }
+  }
+  img {
+    box-shadow: none;
+    transition: all 0.3s;
+  }
+  &:hover {
+    img {
+      box-shadow: 10px 5px 5px red;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+@use "../abstracts/" as *;
+
+header {
+  @include breakpoint-down(medium) {
+    .container--medium {
+      width: 100vw;
+      padding: 0;
+      position: relative;
+    }
+  }
+  .nav {
+    .row {
+      background-color: $color-grey;
+    }
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      padding-top: rem(15);
+      padding-bottom: rem(15);
+      align-items: center;
+
+      //menu mobile
+      .menu-button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        display: none;
+        @include breakpoint-down(medium) {
+          display: block;
+          .icon-mobile-nav[name="close-outline"] {
+            display: none;
+          }
+        }
+
+        // Toggle menu
+        @include breakpoint-down(medium) {
+          &--open {
+            .icon-mobile-nav[name="menu-outline"] {
+              display: none;
+            }
+            .icon-mobile-nav[name="close-outline"] {
+              display: block;
+            }
+          }
+        }
+
+        svg {
+          height: rem(40);
+          color: $color-yellow;
+        }
+        // &__svg {
+        //   border: none;
+        //   background: none;
+        //   cursor: pointer;
+        //   display: none;
+        //   @include breakpoint-down(medium) {
+        //     display: block;
+        //     .icon-mobile-nav[name="close-outline"] {
+        //       display: none;
+        //     }
+        //   }
+        // }
+      }
+    }
+    &__bottom {
+      font-family: psb;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: rem(35) 0 rem(20) 0;
+      border-bottom: 1px solid $color-black;
+      .center-link {
+        display: flex;
+        .link:not(:first-of-type) {
+          margin-left: rem(60);
+        }
+      }
+      &--none-border {
+        border-bottom: none;
+      }
+      @include breakpoint-down(medium) {
+        padding: 0;
+        background-color: $color-black;
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 78px);
+        justify-content: center;
+        z-index: 999;
+
+        position: absolute;
+        width: 100vw;
+
+        transform: translateX(-100%);
+        transition: all 0.5s ease-in;
+
+        // opacity: 0;
+        // pointer-events: none;
+        // visibility: hidden;
+        .center-link {
+          display: flex;
+          flex-direction: column;
+          .link:not(:first-of-type) {
+            margin-left: 0;
+          }
+        }
+        a {
+          padding-top: rem(20);
+          padding-bottom: rem(20);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@use "../abstracts/" as *;
+
+.studio {
+  cursor: pointer;
+  transition: all 0.3s;
+  img {
+    display: block;
+    width: 100%;
+  }
+  &__text {
+    font-weight: 600;
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    &-left {
+      text-align: center;
+      background-color: $color-yellow;
+      padding: rem(25) rem(30);
+    }
+    .name {
+      font-size: rem(11);
+      font-weight: 600;
+    }
+    .number {
+      font-size: rem(60);
+      font-family: dc;
+    }
+    &-right {
+      padding-top: rem(40);
+      @media (max-width: 926px) {
+        padding-top: rem(30);
+      }
+      display: grid;
+      grid-template-columns: 80fr 175fr 110fr;
+      .dimentions {
+        & > div:first-child {
+          margin-bottom: rem(19);
+        }
+        & > div:last-child {
+          margin-top: rem(11);
+        }
+      }
+      .details {
+        font-family: pb;
+        text-align: center;
+        & > div:first-child {
+          margin-bottom: rem(19);
+        }
+        .down {
+          margin: 0 auto;
+          width: 17px;
+          height: 10px;
+        }
+      }
+    }
+  }
+  &:hover {
+    color: $color-white;
+    background-color: $color-grey;
+  }
+}

@@ -1,0 +1,122 @@
+@use "../abstracts/" as *;
+
+footer {
+  .row-2 {
+    background-color: $color-yellow;
+  }
+  font-weight: 600;
+  .footer-top {
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: lsp(100);
+    .grid {
+      border-top: 1px solid $color-black;
+      padding: rem(60) rem(20) rem(25);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: rem(23);
+      .phone-number {
+        margin-left: rem(35);
+      }
+      &--none-border {
+        border-top: none;
+      }
+      @include breakpoint-down(small) {
+        grid-template-columns: 1fr;
+        padding: rem(40) 0 0 0;
+      }
+    }
+    @include breakpoint-down(small) {
+      &__text {
+        display: none;
+      }
+    }
+  }
+  .footer-bottom {
+    .contact {
+      &--none {
+        @include breakpoint-down(small) {
+          display: none;
+        }
+      }
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-left: rem(20);
+      padding-right: rem(20);
+      @include breakpoint-down(small) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      &__col-1 {
+        padding-top: rem(30);
+        text-transform: uppercase;
+        & > *:not(:first-child) {
+          margin-top: rem(23);
+        }
+        @include breakpoint-down(small) {
+          background-color: $color-white;
+          padding-top: rem(23);
+          padding-bottom: rem(40);
+        }
+      }
+      &__col-2 {
+        padding-top: rem(40);
+      }
+      &__form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: rem(20);
+        &-left > *:not(:last-child) {
+          margin-bottom: rem(25);
+        }
+        &-right > *:first-child {
+          margin-bottom: rem(25);
+        }
+      }
+      &__submit {
+        background-color: $color-black-plus;
+        color: $color-white;
+        font-family: pb;
+        font-size: rem(10);
+        text-transform: uppercase;
+        padding: rem(6) rem(12);
+        width: rem(50);
+        align-self: end;
+      }
+      @include breakpoint-down(small) {
+        grid-template-columns: 1fr;
+      }
+    }
+    .arrow-up {
+      text-align: center;
+      margin-top: rem(55);
+      margin-bottom: rem(20);
+    }
+    .copy-right {
+      text-align: center;
+      padding-bottom: rem(165);
+    }
+    &--contact-page {
+      @include breakpoint-down(small) {
+        padding-top: rem(40);
+      }
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    @include breakpoint-down(small) {
+      display: none;
+    }
+  }
+  @include breakpoint-down(small) {
+    text-align: center;
+    .row-2 {
+      .container {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}

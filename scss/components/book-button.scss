@@ -1,0 +1,58 @@
+@use "../abstracts/" as *;
+
+.book {
+  display: flex;
+  &__text {
+    font-size: rem(14);
+    max-width: 13ch;
+    text-align: right;
+    margin-right: rem(20);
+    &--white {
+      color: $color-white;
+    }
+    &--left {
+      text-align: left;
+      margin-left: rem(20);
+    }
+    @include breakpoint-down(medium) {
+      margin-bottom: rem(15);
+      text-align: center;
+      margin-right: 0;
+    }
+  }
+  &__button {
+    text-transform: uppercase;
+    width: rem(100);
+    height: rem(100);
+    font-size: rem(20);
+    font-family: peb;
+    letter-spacing: lsp(-25);
+    line-height: rem(30);
+    border-radius: 10%;
+    color: $color-yellow;
+    background-color: $color-grey;
+    &--black-text {
+      color: $color-black;
+    }
+    &--yellow-background {
+      background-color: $color-yellow;
+    }
+  }
+  &__work {
+    position: absolute;
+    right: rem(35);
+    top: rem(78);
+    @include breakpoint-down(medium) {
+      position: unset;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &--revert {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+  }
+}

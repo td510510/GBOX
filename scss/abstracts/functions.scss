@@ -1,0 +1,10 @@
+@use "sass:math";
+
+//change 1px = 1rem
+@function rem($pixels, $context: 16) {
+  @return (math.div($pixels, $context)) * 1rem;
+}
+
+@function lsp($ps-value) {
+  @return (math.div($ps-value, 1000)) * 1em;
+}

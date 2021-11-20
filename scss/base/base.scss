@@ -1,0 +1,47 @@
+@use "../abstracts" as *;
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: rem($default-font-size);
+  font-family: pr;
+  color: $color-black;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: $color-black;
+  @include breakpoint-down(medium) {
+    color: $color-white;
+  }
+}
+
+.link:hover,
+.link:active {
+  color: $color-yellow;
+}
+
+input:focus {
+  outline: none;
+}

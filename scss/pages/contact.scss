@@ -1,0 +1,56 @@
+@use "../abstracts/" as *;
+
+.contact-hero {
+  padding-top: rem(70);
+  padding-bottom: rem(20);
+  color: $color-white;
+  text-transform: uppercase;
+  background: url("../../imgs/hero-contact.jpg") center;
+  background-size: 100% 100vh;
+  &__logo {
+    text-align: center;
+    @include breakpoint-down(small) {
+      display: none;
+    }
+  }
+  &__infor {
+    margin-top: rem(42);
+    margin-bottom: rem(55);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(25) rem(60);
+    &--right {
+      text-align: right;
+    }
+    @include breakpoint-down(small) {
+      grid-template-columns: 1fr;
+      text-align: center;
+      &--right {
+        text-align: center;
+      }
+      div:nth-child(2) {
+        grid-row: 1/2;
+      }
+      div:nth-child(4) {
+        grid-row: 2/3;
+      }
+      div:nth-child(8) {
+        grid-row: 3/4;
+      }
+    }
+  }
+  .icon-down {
+    width: rem(19);
+    height: rem(11);
+    margin: 0 auto;
+    background-color: none;
+    @include breakpoint-down(small) {
+      display: none;
+    }
+  }
+  &--contact-bottom {
+    @include breakpoint-down(small) {
+      margin-bottom: rem(-60);
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use "../abstracts/" as *;
+
+.studios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: rem(70) rem(20);
+  padding-top: rem(70);
+  padding-bottom: rem(100);
+  @include breakpoint-down(medium) {
+    grid-template-columns: 1fr;
+  }
+}

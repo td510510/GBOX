@@ -1,0 +1,9 @@
+@use "../abstracts/" as *;
+
+.rental {
+  font-size: rem(40);
+  font-family: pb;
+  text-align: center;
+  padding-top: rem(200);
+  padding-bottom: rem(200);
+}

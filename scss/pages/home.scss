@@ -1,0 +1,54 @@
+@use "../abstracts/" as *;
+
+.projects {
+  margin-top: rem(50);
+  font-family: psb;
+  .tabs-container {
+    display: flex;
+    text-transform: uppercase;
+    justify-content: center;
+    margin-bottom: rem(20);
+    .tab:nth-child(2) {
+      margin: 0 rem(28);
+    }
+    .tab {
+      &--active {
+        font-family: peb;
+      }
+    }
+  }
+  .col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(70) rem(10);
+    @include breakpoint-down(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint-down(small) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.more {
+  padding-top: rem(78);
+  padding-bottom: rem(78);
+  text-align: center;
+  &__text {
+    margin-bottom: rem(20);
+    font-family: psb;
+    text-transform: uppercase;
+    letter-spacing: lsp(100);
+    @include breakpoint-down(medium) {
+      margin-top: rem(65);
+    }
+  }
+  &__work {
+    position: relative;
+    padding-bottom: rem(145);
+    @include breakpoint-down(medium) {
+      position: unset;
+      padding-bottom: rem(30);
+    }
+  }
+}

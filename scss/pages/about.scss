@@ -1,0 +1,32 @@
+@use "../abstracts/" as *;
+
+.about {
+  padding-top: rem(105);
+  padding-bottom: rem(75);
+  background-color: #282828;
+  @include breakpoint-down(small) {
+    padding-top: rem(45);
+    padding-bottom: rem(95);
+  }
+  &__title {
+    font-family: pb;
+    font-size: rem(36);
+    letter-spacing: lsp(600);
+    color: $color-yellow;
+    max-width: 15ch;
+    margin-bottom: rem(45);
+  }
+  &__des {
+    color: $color-white;
+    font-family: pl;
+    font-size: rem(18);
+    letter-spacing: lsp(-25);
+    line-height: rem(40);
+    max-width: 77ch;
+    margin-bottom: rem(60);
+    @include breakpoint-down(small) {
+      font-size: rem(16);
+      line-height: rem(34);
+    }
+  }
+}

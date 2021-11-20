@@ -1,0 +1,30 @@
+@use "../abstracts/" as *;
+
+.full-screen {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: absolute;
+  bottom: rem(12);
+  left: rem(12);
+  //effect hover
+  opacity: 0;
+  transition: all 0.5s;
+  &__svg {
+    width: rem(30);
+    height: rem(30);
+    background-color: $color-yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  svg {
+    width: rem(15);
+    height: rem(15);
+  }
+  &__text {
+    font-size: rem(12);
+    color: $color-white;
+    margin-left: rem(10);
+  }
+}

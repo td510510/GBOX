@@ -1,0 +1,67 @@
+@use "../abstracts/" as *;
+
+.hero {
+  &-cafe {
+    @include breakpoint-down(small) {
+      padding-top: rem(30);
+      padding-bottom: rem(30);
+    }
+  }
+  padding-top: rem(60);
+  padding-bottom: rem(60);
+  position: relative;
+  &--white-font {
+    color: $color-white;
+  }
+  &--white-line {
+    &::after {
+      background-color: $color-white;
+    }
+  }
+  &--cafe-background {
+    background: url("../../imgs/hero-cafe.jpg");
+  }
+  .hero-box {
+    text-align: center;
+    & > *:not(:last-child) {
+      margin-bottom: rem(30);
+      text-transform: uppercase;
+    }
+    &__welcome {
+      font-size: rem(14);
+      letter-spacing: lsp(200);
+      font-weight: 600;
+      &--yellow-font {
+        color: $color-yellow;
+      }
+    }
+    &__gbox {
+      display: inline-block;
+      font-family: pb;
+      font-size: rem(20);
+      background-color: $color-yellow;
+      letter-spacing: lsp(300);
+      &--cafe-style {
+        background-color: unset;
+        color: $color-yellow;
+      }
+    }
+    &__intro {
+      max-width: 111ch;
+      margin: 0 auto;
+      font-family: ar;
+      line-height: rem(22);
+      letter-spacing: rem(-0.4);
+    }
+  }
+  &::after {
+    content: "";
+    width: 30%;
+    height: 1px;
+    background-color: $color-black;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

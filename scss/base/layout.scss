@@ -1,0 +1,15 @@
+@use "../abstracts/" as *;
+.wrapper {
+  max-width: rem($wrapper);
+  margin: 0 auto;
+}
+.container {
+  max-width: rem($container + 70);
+  padding-left: rem(35);
+  padding-right: rem(35);
+  margin: 0 auto;
+  @include breakpoint-down(xsmall) {
+    padding-left: rem(20);
+    padding-right: rem(20);
+  }
+}
